@@ -1,0 +1,28 @@
+Onze club heeft een rijk verleden dat vanaf november 1951 is vastgelegd in meer dan 400 nummers ‘CaissaNieuws’. Al die nummers zijn gedigitaliseerd en doorzoekbaar gemaakt. Wilt u bijvoorbeeld weten wat in CaissaNieuws werd geschreven over de match ‘Fischer-Spassky’? Of wie kampioen werd in 1990? Met de aangepaste zoekfunctie vindt u snel het antwoord. De redactie werkt momenteel aan de archivering van clubbladen van voorlopers van Caissa. We houden u op de hoogte.
+[display_gsc]
+[accordion]
+{{#each archive.decades}}
+[toggle title="{{decade}}" state="closed"]
+	<div id="content">
+		<ul class="nav nav-tabs">
+		{{#each years}}
+			<li class="{{#if @first}}active{{/if}}"><a href="#C{{year}}" data-toggle="tab">{{year}}</a></li>
+		{{/each}}
+		</ul>
+	</div>
+	<div class="tab-content">
+	{{#each years}}
+		<div id="C{{year}}" class="tab-pane {{#if @first}}active{{/if}}">
+		{{#each months}}
+			{{#with edition}}
+			<div class="span1 archive-edition">
+				<a href="{{editionURL}}"><div class="archive-month-name">{{month}}</div><img class="archive-thumb" src="{{coverURL}}"/><div class="archive-edition-number">{{number}}</div></a>
+			</div>
+			{{/with}}
+		{{/each}}
+		</div>
+	{{/each}}
+	</div>
+[/toggle]
+{{/each}}
+[/accordion]
